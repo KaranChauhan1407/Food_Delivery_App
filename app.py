@@ -610,8 +610,8 @@ if __name__ == "__main__":
     # Connect to the MySQL database
     cnx = mysql.connector.connect(
         host='localhost',
-        user='root',
-        password='12345',
+        user='',
+        password='',
         database='class12project'
     )
     cursor = cnx.cursor()

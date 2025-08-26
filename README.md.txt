@@ -1,125 +1,67 @@
-# 🍔 FeastFast - Food Delivery App
+Food Delivery App
 
-**FeastFast** is a Python console-based food delivery app. Browse restaurants, place orders, track them in real-time, and manage previous orders. It uses **MySQL** for restaurant menus and **Python `pickle`** files for storing user signup and order history.
+This is a simple Python-based Food Delivery application using MySQL as the database. It allows users to sign up, view menus, and manage orders.
 
----
+Features
 
-## ✨ Features
+User sign-up and login
 
-- User Signup & Login
-- Browse All Restaurants
-- Search for Food or Restaurant
-- Add Items to Cart & Checkout
-- Track Orders with Simulated ETA
-- View Previous Orders
-- Multiple Payment Options: Cash, UPI, Net Banking, Credit/Debit Card
-- Provide Feedback & Contact Support
+Menu display
 
----
+Order placement
 
-## 📂 Project Structure
+Database storage using MySQL
 
-Food_Delivery_App/
-│
-├─ app.py # Main Python script
-├─ database.sql # MySQL database dump
-├─ README.md # Project documentation
-├─ .gitignore # Git ignore rules
+Prerequisites
 
-yaml
-Copy
-Edit
+Python 3.x
 
-> Dynamic files like user signup data and order history are **not included**.
+MySQL server installed and running
 
----
+mysql-connector-python library
 
-## 🛠️ Prerequisites
+Install the required Python library with:
 
-- Python 3.8+
-- MySQL Server
-- pip (Python package manager)
-
----
-
-## ⚡ Installation
-
-1. **Clone the repository:**
-```bash
-git clone https://github.com/yourusername/Food_Delivery_App.git
-cd Food_Delivery_App
-Create a virtual environment (recommended):
-
-bash
-Copy
-Edit
-python -m venv venv
-Activate the virtual environment:
-
-Windows (PowerShell):
-
-powershell
-Copy
-Edit
-.\venv\Scripts\Activate.ps1
-Windows (CMD):
-
-cmd
-Copy
-Edit
-.\venv\Scripts\activate.bat
-Mac/Linux:
-
-bash
-Copy
-Edit
-source venv/bin/activate
-Install dependencies:
-
-bash
-Copy
-Edit
 pip install mysql-connector-python
-🗄️ Database Setup
-Open MySQL Workbench or your preferred client.
 
-Create a new database:
+Setup Instructions
 
-sql
-Copy
-Edit
-CREATE DATABASE class12project;
-USE class12project;
-Import database.sql to create all restaurant tables and menu items.
+Clone the repository:
 
-Update database connection in app.py if needed:
+git clone <your-repo-url>
+cd Food_Delivery_App
 
-python
-Copy
-Edit
+
+Set up the database:
+
+Create a MySQL database named class12project.
+
+Run food_delivery.sql in your MySQL server to create tables and sample data.
+
+Configure Database Credentials:
+
+Edit app.py and update your MySQL credentials:
+
 cnx = mysql.connector.connect(
     host='localhost',
-    user='root',
-    password='YOUR_PASSWORD',
+    user='<your_mysql_user>',
+    password='<your_mysql_password>',
     database='class12project'
 )
-▶️ How to Run
-bash
-Copy
-Edit
+
+
+Note: Do not store your real credentials in the repo. Keep them blank or use environment variables if you prefer.
+
+Run the application:
+
 python app.py
-Choose SIGNUP or LOGIN.
 
-Browse restaurants, add items to cart, checkout, and track orders.
+Important Notes
 
-User files are generated automatically in a local folder.
+The file signupfile.dat is tracked in this repo. It stores user data.
 
-⚠️ Notes
-venv/ and dynamic user files (signupfile.dat, order files) are ignored in GitHub.
+Make sure MySQL server is running before starting the app.
 
-Order tracking is simulated with random ETAs.
+Contributions
 
-Best run in terminal/command prompt for proper formatting.
-
-📄 License
-This project is for educational purposes and can be freely used, modified, or shared.
+Feel free to fork this repo and add new features or improve the code.
